@@ -3,7 +3,12 @@
 {
 	"name": "SampleName",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "python:3.9-slim"
+	"build": {
+		"dockerfile": "Dockerfile"
+		// Update 'VARIANT' to pick a Node version: 16, 14, 12.
+		// Append -bullseye or -buster to pin to an OS version.
+		// Use -bullseye variants on local arm64/Apple Silicon.
+	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
