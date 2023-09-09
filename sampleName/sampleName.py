@@ -1,24 +1,54 @@
 import os
+import json
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-MALE_NAME_FILE = os.path.join(BASE_DIR, "male.txt")
-FEMALE_NAME_FILE = os.path.join(BASE_DIR, "female.txt")
+MALE_NAME_FILE = os.path.join(BASE_DIR, "male.json")
+FEMALE_NAME_FILE = os.path.join(BASE_DIR, "female.json")
 
 
 class SampleName:
 
-    def listName(self, length=8):
+    def __init__(self):
+        # TODO 加上可讀取自訂名稱 JSON 檔
+        # TODO class variable -> list 長度
+        self._loadNameList()
+
+    def _loadNameList(self):
         '''
-        取得男生/女生名字隨機
+        instance 建立時載入名稱檔案, 不要每次呼叫 function 才讀取 JSON
+        '''
+        with open(MALE_NAME_FILE, 'r', encoding='utf-8') as file:
+            self._male_name_list = json.loads(file.read())
+
+        with open(FEMALE_NAME_FILE, 'r', encoding='utf-8') as file:
+            self._female_name_list = json.loads(file.read())
+
+    def listName(self, length) -> list:
+        '''
+        隨機取得男生/女生英文名字
         '''
 
-    def listMaleName(self, length=8):
+    def listNameCht(self, length) -> list:
         '''
-        取得男生名稱清單
+        隨機取得男生/女生英文名字翻譯
         '''
 
-    def listFemaleName(self, length=8):
+    def listMaleName(self, length) -> list:
         '''
-        取得女生名字清單
+        隨機取得男生英文名稱
+        '''
+
+    def listMaleNameCht(self, length) -> list:
+        '''
+        隨機取得男生英文名字翻譯
+        '''
+
+    def listFemaleName(self, length) -> list:
+        '''
+        隨機取得女生英文名字
+        '''
+
+    def listFemaleNameCht(self, length) -> list:
+        '''
+        隨機取得女生英文名字翻譯
         '''
