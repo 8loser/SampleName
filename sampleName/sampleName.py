@@ -11,6 +11,7 @@ FEMALE_NAME_FILE = os.path.join(BASE_DIR, "female.json")
 class SampleName:
 
     class Gender(Enum):
+        All = 'All'
         Male = 'Male'
         Female = 'Female'
 
@@ -50,18 +51,25 @@ class SampleName:
             name_list = random.sample(self._male_name_list, length)
         elif gender == self.Gender.Female:
             name_list = random.sample(self._female_name_list, length)
+        elif gender == self.Gender.All:
+            name_list = random.sample(
+                self._male_name_list + self._female_name_list, length)
 
         return [item[language.value] for item in name_list]
 
     def listName(self, length) -> list:
         '''
-        TODO 隨機取得男生/女生英文名字
+        隨機取得男生/女生英文名字
         '''
+        return self._common_list_name(self.Gender.All, self.Language.English,
+                                      length)
 
     def listNameCht(self, length) -> list:
         '''
-        TODO 隨機取得男生/女生英文名字翻譯
+        隨機取得男生/女生英文名字翻譯
         '''
+        return self._common_list_name(self.Gender.All, self.Language.Chinese,
+                                      length)
 
     def listMaleName(self, length) -> list:
         '''
