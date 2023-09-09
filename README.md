@@ -1,6 +1,15 @@
 # SampleName
 產生隨機英文名稱
 
-- [ ] name list json
+
+# Development
+
+安裝套件
+```
+pip install -r requirements.txt
+```
+
+# TODO
+- [x] name list json
 - [ ] setup.py
 - [ ] github actions->pypi
