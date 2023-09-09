@@ -1,5 +1,7 @@
 import os
 import json
+import random
+from enum import Enum
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MALE_NAME_FILE = os.path.join(BASE_DIR, "male.json")
@@ -7,6 +9,17 @@ FEMALE_NAME_FILE = os.path.join(BASE_DIR, "female.json")
 
 
 class SampleName:
+
+    class Gender(Enum):
+        Male = 'Male'
+        Female = 'Female'
+
+    class Language(Enum):
+        '''
+        JSON 的 key
+        '''
+        English = 'english'
+        Chinese = 'chinese'
 
     def __init__(self):
         # TODO 加上可讀取自訂名稱 JSON 檔
@@ -23,32 +36,57 @@ class SampleName:
         with open(FEMALE_NAME_FILE, 'r', encoding='utf-8') as file:
             self._female_name_list = json.loads(file.read())
 
+    def _common_list_name(self, gender: Gender, language: Language,
+                          length: int):
+        '''
+        listName 共用的 function
+        TODO 加上參數說明
+        '''
+        if not (isinstance(length, int)):
+            raise TypeError("length 須為 int")
+
+        # 使用 random.sample 取得不重複的名稱
+        if gender == self.Gender.Male:
+            name_list = random.sample(self._male_name_list, length)
+        elif gender == self.Gender.Female:
+            name_list = random.sample(self._female_name_list, length)
+
+        return [item[language.value] for item in name_list]
+
     def listName(self, length) -> list:
         '''
-        隨機取得男生/女生英文名字
+        TODO 隨機取得男生/女生英文名字
         '''
 
     def listNameCht(self, length) -> list:
         '''
-        隨機取得男生/女生英文名字翻譯
+        TODO 隨機取得男生/女生英文名字翻譯
         '''
 
     def listMaleName(self, length) -> list:
         '''
         隨機取得男生英文名稱
         '''
+        return self._common_list_name(self.Gender.Male, self.Language.English,
+                                      length)
 
     def listMaleNameCht(self, length) -> list:
         '''
         隨機取得男生英文名字翻譯
         '''
+        return self._common_list_name(self.Gender.Male, self.Language.Chinese,
+                                      length)
 
     def listFemaleName(self, length) -> list:
         '''
         隨機取得女生英文名字
         '''
+        return self._common_list_name(self.Gender.Female,
+                                      self.Language.English, length)
 
     def listFemaleNameCht(self, length) -> list:
         '''
         隨機取得女生英文名字翻譯
         '''
+        return self._common_list_name(self.Gender.Female,
+                                      self.Language.Chinese, length)
