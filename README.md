@@ -11,5 +11,5 @@ pip install -r requirements.txt
 
 # TODO
 - [x] name list json
-- [ ] setup.py
+- [x] setup.py
 - [ ] github actions->pypi
