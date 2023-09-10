@@ -5,7 +5,7 @@ HERE = pathlib.Path(__file__).parent.resolve()
 
 PACKAGE_NAME = "SampleName"
 AUTHOR = "8loser"
-AUTHOR_EMAIL = "8loser@gmail.com"
+AUTHOR_EMAIL = "8loser+pypi@gmail.com"
 URL = "https://github.com/8loser/SampleName"
 DOWNLOAD_URL = "https://pypi.org/project/SampleName"
 
