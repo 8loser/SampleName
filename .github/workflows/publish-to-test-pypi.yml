@@ -1,15 +1,7 @@
-# This is a basic workflow to help you get started with Actions
-name: CI
+name: release
 
-# Controls when the workflow will run
-on:
-    # Triggers the workflow on push or pull request events but only for the "main" branch
-    # push:
-    #     branches: ['main']
-    # pull_request:
-    #     branches: ['main']
 # release 時才執行
-# on:
+on:
   release:
     types:
       - published
@@ -20,12 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-
-    # - name: Set env
-    #   run: echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
-    - name: Test
-      run: echo ${{ env.GITHUB_SHA_SHORT }}
-
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
