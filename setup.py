@@ -1,4 +1,5 @@
 import pathlib
+import os
 from setuptools import setup, find_packages
 
 HERE = pathlib.Path(__file__).parent.resolve()
@@ -10,7 +11,7 @@ URL = "https://github.com/8loser/SampleName"
 DOWNLOAD_URL = "https://pypi.org/project/SampleName"
 
 LICENSE = "MIT"
-VERSION = "0.0.1"
+VERSION = os.environ.get('GITHUB_SHA_SHORT')
 DESCRIPTION = "產生隨機英文名稱或英文稱的中文翻譯"
 LONG_DESCRIPTION = (HERE / "README.md").read_text(encoding="utf8")
 LONG_DESC_TYPE = "text/markdown"
