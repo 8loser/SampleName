@@ -12,12 +12,13 @@ DOWNLOAD_URL = "https://pypi.org/project/SampleName"
 
 print('----for test')
 print(os.environ.get('GITHUB_github.ref'))
-print(os.environ.get('github.ref'))
 print(os.environ.get('GITHUB_REF'))
+print(os.environ.get('GITHUB_REF').split("/")[-1])
+print('-----test end----')
 
 LICENSE = "MIT"
 VERSION = os.environ.get('GITHUB_REF').split("/")[-1]
-print(VERSION)
+
 DESCRIPTION = "產生隨機英文名稱或英文稱的中文翻譯"
 LONG_DESCRIPTION = (HERE / "README.md").read_text(encoding="utf8")
 LONG_DESC_TYPE = "text/markdown"
