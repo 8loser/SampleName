@@ -9,14 +9,9 @@ AUTHOR = "8loser"
 AUTHOR_EMAIL = "8loser+pypi@gmail.com"
 URL = "https://github.com/8loser/SampleName"
 DOWNLOAD_URL = "https://pypi.org/project/SampleName"
-
-print('----for test')
-print("GITHUB_REF=%s" % (os.environ.get('GITHUB_REF')))
-print("GITHUB_REF_NAME=%s" % (os.environ.get('GITHUB_REF_NAME')))
-print('-----test end----')
-
 LICENSE = "MIT"
-VERSION = os.environ.get('GITHUB_REF').split("/")[-1]
+# 使用 tag 作為版本號
+VERSION = os.environ.get('GITHUB_REF_NAME')
 
 DESCRIPTION = "產生隨機英文名稱或英文稱的中文翻譯"
 LONG_DESCRIPTION = (HERE / "README.md").read_text(encoding="utf8")
