@@ -16,8 +16,8 @@ print(os.environ.get('github.ref'))
 print(os.environ.get('GITHUB_REF'))
 
 LICENSE = "MIT"
-VERSION = "0.0.1"
-VERSION = os.environ.get('GITHUB_SHA_SHORT')
+VERSION = os.environ.get('GITHUB_REF').split("/")[-1]
+print(VERSION)
 DESCRIPTION = "產生隨機英文名稱或英文稱的中文翻譯"
 LONG_DESCRIPTION = (HERE / "README.md").read_text(encoding="utf8")
 LONG_DESC_TYPE = "text/markdown"

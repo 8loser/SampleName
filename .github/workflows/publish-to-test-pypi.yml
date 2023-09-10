@@ -4,13 +4,15 @@ name: CI
 # Controls when the workflow will run
 on:
     # Triggers the workflow on push or pull request events but only for the "main" branch
-    # push:
-    #     branches: ['main']
-    # pull_request:
-    #     branches: ['main']
-  release:
-    types:
-      - published
+    push:
+        branches: ['main']
+    pull_request:
+        branches: ['main']
+# release 時才執行
+# on:
+#   release:
+#     types:
+#       - published
 
 jobs:
   build-n-publish:
@@ -21,8 +23,8 @@ jobs:
 
     # - name: Set env
     #   run: echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
-    # - name: Test
-    #   run: echo ${{ env.GITHUB_SHA_SHORT }}
+    - name: Test
+      run: echo ${{ env.GITHUB_SHA_SHORT }}
 
     - name: Set up Python
       uses: actions/setup-python@v4
