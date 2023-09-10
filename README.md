@@ -2,7 +2,17 @@
 產生隨機英文名稱
 
 # 範例
+```
+from sampleName import SampleName
 
+smapleName = SampleName()
+nameList = smapleName.listNameEng()
+print(nameList)
+# ['Kate', 'Cedric', 'Adrian', 'Yuri', 'Lara', 'Mildred', 'Craig', 'Oswald']
+nameList = smapleName.listNameCht()
+print(nameList)
+# ['海頓', '藍道夫', '吉羅德', '妮可拉', '阿爾瓦', '比尤萊', '伊蒂絲', '珀莉']
+```
 # Development
 
  - VSCode
