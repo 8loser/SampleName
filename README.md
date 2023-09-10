@@ -12,4 +12,4 @@
 # TODO
 - [x] name list json
 - [x] setup.py
-- [ ] github actions->pypi
+- [x] github actions->pypi
