@@ -11,9 +11,8 @@ URL = "https://github.com/8loser/SampleName"
 DOWNLOAD_URL = "https://pypi.org/project/SampleName"
 
 print('----for test')
-print(os.environ.get('GITHUB_github.ref'))
-print(os.environ.get('GITHUB_REF'))
-print(os.environ.get('GITHUB_REF').split("/")[-1])
+print("GITHUB_REF=%s" % (os.environ.get('GITHUB_REF')))
+print("GITHUB_REF_NAME=%s" % (os.environ.get('GITHUB_REF_NAME')))
 print('-----test end----')
 
 LICENSE = "MIT"
