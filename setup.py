@@ -13,6 +13,7 @@ DOWNLOAD_URL = "https://pypi.org/project/SampleName"
 print('----for test')
 print(os.environ.get('GITHUB_github.ref'))
 print(os.environ.get('github.ref'))
+print(os.environ.get('GITHUB_REF'))
 
 LICENSE = "MIT"
 VERSION = "0.0.1"
