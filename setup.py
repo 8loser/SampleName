@@ -38,4 +38,8 @@ setup(
     install_requires=INSTALL_REQUIRES,
     packages=find_packages(),
     classifiers=CLASSIFIERS,
+    include_package_data=True,
+    package_data={
+        'sampleName': ["*.json"],
+    },
 )
