@@ -1,8 +1,9 @@
 # SampleName
-產生隨機英文名稱或英文名稱的中文翻譯
+[![PyPI](https://img.shields.io/pypi/v/SampleName?color=%2334D058&label=pypi%20package)](https://pypi.org/project/SampleName/)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/SampleName.svg)](https://pypi.org/project/SampleName/)
 
-[![PyPI](https://img.shields.io/pypi/v/SampleName.svg)](https://pypi.org/project/SampleName/)
-![PyPI - Downloads](https://img.shields.io/pypi/dm/SampleName.svg)
+
+產生隨機英文名稱或英文名稱的中文翻譯, 寫範例程式時可以用
 
 
 # Install
