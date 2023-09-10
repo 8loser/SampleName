@@ -13,7 +13,7 @@ LICENSE = "MIT"
 # 使用 tag 作為版本號
 VERSION = os.environ.get('GITHUB_REF_NAME')
 
-DESCRIPTION = "產生隨機英文名稱或英文稱的中文翻譯"
+DESCRIPTION = "產生隨機英文名稱或英文名稱的中文翻譯"
 LONG_DESCRIPTION = (HERE / "README.md").read_text(encoding="utf8")
 LONG_DESC_TYPE = "text/markdown"
 
