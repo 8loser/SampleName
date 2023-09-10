@@ -36,3 +36,7 @@ print(nameList)
  - release 後會自動上傳到 PyPI, 版本號會用 tag
    - [release_action.yml](/.github/workflows/release_action.yml)
    - [setup.py](/setup.py)
+
+# TODO
+ - [ ] push 後執行 pytest
+ - [ ] 增加 test badge
