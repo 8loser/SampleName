@@ -11,6 +11,9 @@ FEMALE_NAME_FILE = os.path.join(BASE_DIR, "female.json")
 class SampleName:
 
     class Gender(Enum):
+        '''
+        性別
+        '''
         All = 'All'
         Male = 'Male'
         Female = 'Female'
@@ -27,7 +30,7 @@ class SampleName:
         # TODO class variable -> list 長度
         self._loadNameList()
 
-    def _loadNameList(self):
+    def _loadNameList(self) -> None:
         '''
         instance 建立時載入名稱檔案, 不要每次呼叫 function 才讀取 JSON
         '''
@@ -38,10 +41,9 @@ class SampleName:
             self._female_name_list = json.loads(file.read())
 
     def _common_list_name(self, gender: Gender, language: Language,
-                          length: int):
+                          length: int) -> list:
         '''
         listName 共用的 function
-        TODO 加上參數說明
         '''
         if not (isinstance(length, int)):
             raise TypeError("length 須為 int")
@@ -57,7 +59,7 @@ class SampleName:
 
         return [item[language.value] for item in name_list]
 
-    def listName(self, length) -> list:
+    def listNameEng(self, length) -> list:
         '''
         隨機取得男生/女生英文名字
         '''
@@ -71,7 +73,7 @@ class SampleName:
         return self._common_list_name(self.Gender.All, self.Language.Chinese,
                                       length)
 
-    def listMaleName(self, length) -> list:
+    def listMaleNameEng(self, length) -> list:
         '''
         隨機取得男生英文名稱
         '''
@@ -85,7 +87,7 @@ class SampleName:
         return self._common_list_name(self.Gender.Male, self.Language.Chinese,
                                       length)
 
-    def listFemaleName(self, length) -> list:
+    def listFemaleNameEng(self, length) -> list:
         '''
         隨機取得女生英文名字
         '''

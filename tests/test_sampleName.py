@@ -23,10 +23,10 @@ def common_list_name_failed(func):
         func('test')
 
 
-def test_listName():
+def test_listNameEng():
     sampleNameInst = SampleName()
-    common_list_name(sampleNameInst.listName)
-    common_list_name_failed(sampleNameInst.listName)
+    common_list_name(sampleNameInst.listNameEng)
+    common_list_name_failed(sampleNameInst.listNameEng)
 
 
 def test_listNameCht():
@@ -35,10 +35,10 @@ def test_listNameCht():
     common_list_name_failed(sampleNameInst.listNameCht)
 
 
-def test_listMaleName():
+def test_listMaleNameEng():
     sampleNameInst = SampleName()
-    common_list_name(sampleNameInst.listMaleName)
-    common_list_name_failed(sampleNameInst.listMaleName)
+    common_list_name(sampleNameInst.listMaleNameEng)
+    common_list_name_failed(sampleNameInst.listMaleNameEng)
 
 
 def test_listMaleNameCht():
@@ -47,10 +47,10 @@ def test_listMaleNameCht():
     common_list_name_failed(sampleNameInst.listMaleNameCht)
 
 
-def test_listFemaleName():
+def test_listFemaleNameEng():
     sampleNameInst = SampleName()
-    common_list_name(sampleNameInst.listFemaleName)
-    common_list_name_failed(sampleNameInst.listFemaleName)
+    common_list_name(sampleNameInst.listFemaleNameEng)
+    common_list_name_failed(sampleNameInst.listFemaleNameEng)
 
 
 def test_listFemaleNameCht():
