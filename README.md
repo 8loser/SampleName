@@ -1,7 +1,7 @@
 # SampleName
 [![PyPI](https://img.shields.io/pypi/v/SampleName?color=%2334D058&label=pypi%20package)](https://pypi.org/project/SampleName/)
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/SampleName.svg)](https://pypi.org/project/SampleName/)
-
+![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/8loser/SampleName/push_test.yml)
 
 產生隨機英文名稱或英文名稱的中文翻譯, 寫範例程式時可以用
 
