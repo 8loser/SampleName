@@ -67,9 +67,8 @@ class SampleName:
         '''
         隨機取得男生/女生英文名字
         '''
-        # return self._common_list_name(self.Gender.All, self.Language.English,
-        #                               length)
-        return 'error test'
+        return self._common_list_name(self.Gender.All, self.Language.English,
+                                      length)
 
     def listNameCht(self, length: int = None) -> list:
         '''
