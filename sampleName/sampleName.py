@@ -25,10 +25,32 @@ class SampleName:
         English = 'english'
         Chinese = 'chinese'
 
-    def __init__(self, length: int = 8):
-        # TODO 加上可讀取自訂名稱 JSON 檔
+    def __init__(self, custom=None, length: int = 8):
         self._length = length
         self._loadNameList()
+        self._customList = None
+        if isinstance(custom, list):
+            # 直接傳入 list[str] 作為自訂清單
+            self._customList = custom
+            self._lengthLimit(custom)
+        elif isinstance(custom, str):
+            # 載入 JSON 路徑檔案
+            self._loadCustomFileList(custom)
+
+    def _lengthLimit(self, checkList: list) -> None:
+        '''
+        限制 self._length 不要小於 list, 不然 random.sample() 會有錯誤
+        '''
+        if self._length > len(checkList):
+            self._length = len(checkList)
+
+    def _loadCustomFileList(self, filePath) -> None:
+        '''
+        載入自訂的 JSON list
+        '''
+        with open(filePath, 'r', encoding='utf-8') as file:
+            self._customList = json.loads(file.read())
+            self._lengthLimit(self._customList)
 
     def _loadNameList(self) -> None:
         '''
@@ -62,6 +84,16 @@ class SampleName:
                 self._male_name_list + self._female_name_list, length)
 
         return [item[language.value] for item in name_list]
+
+    def listCustom(self, length=None) -> list:
+        '''
+        從自訂的 list 隨機挑選不重複的
+        '''
+        if self._customList is None:
+            raise NameError('自定義清單不存在')
+
+        return random.sample(self._customList,
+                             self._length if length is None else length)
 
     def listNameEng(self, length: int = None) -> list:
         '''
