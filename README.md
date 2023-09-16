@@ -32,11 +32,7 @@ print(nameList)
  - 開發環境佈置 [Remote-Containers](https://8loser.github.io/2022/05/13/Remote-Containers/)
    - 執行 remote container 會自動安裝 flake8, yapf 套件, 以及 pytest
  - 單元測試, 執行 `pytest`
-   - [test_sampleName.py](https://github.com/8loser/SampleName/blob/0.0.4/tests/test_sampleName.py)
+   - [test_sampleName.py](https://github.com/8loser/SampleName/blob/main/tests/test_sampleName.py)
  - release 後會自動上傳到 PyPI, 版本號會用 tag
-   - [release_action.yml](https://github.com/8loser/SampleName/blob/0.0.4/.github/workflows/release_action.yml)
-   - [setup.py](https://github.com/8loser/SampleName/blob/0.0.4/setup.py)
-
-# TODO
- - [ ] push 後執行 pytest
- - [ ] 增加 test badge
+   - [release_action.yml](https://github.com/8loser/SampleName/blob/main/.github/workflows/release_action.yml)
+   - [setup.py](https://github.com/8loser/SampleName/blob/main/setup.py)
