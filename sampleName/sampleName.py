@@ -91,9 +91,11 @@ class SampleName:
         '''
         if self._customList is None:
             raise NameError('自定義清單不存在')
+        length = self._length if length is None else length
 
-        return random.sample(self._customList,
-                             self._length if length is None else length)
+        if length > len(self._customList):
+            raise ValueError(f'自訂清單長度小於 {length}')
+        return random.sample(self._customList, length)
 
     def listNameEng(self, length: int = None) -> list:
         '''
